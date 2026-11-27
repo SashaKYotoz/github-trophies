@@ -1,4 +1,4 @@
-PORT=8080
+PORT=80
 GITHUB_TOKEN1=
 GITHUB_TOKEN2=
 GITHUB_API=https://api.github.com/graphql

@@ -1,13 +1,14 @@
 FROM denoland/deno:latest
 
-# Create working directory
 WORKDIR /app
 
-# Copy source
+# Vercel routes requests to $PORT (80 by default). Keep these in sync.
+ENV PORT=80
+EXPOSE 80
+
 COPY . .
 
-# Compile the main app
+# Download and cache all remote dependencies at build time
 RUN deno cache main.ts
 
-# Run the app
 CMD ["deno", "run", "-A", "main.ts"]
